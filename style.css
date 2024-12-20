@@ -1,0 +1,170 @@
+
+body, h1, h2, p, input, button, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+ 
+    color: #333;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    animation: col 4s ease infinite; 
+}
+@keyframes col {
+     0% { background: linear-gradient(to right, #ffafbd, #ffc3a0);}
+       100% { background: linear-gradient(to right, #ffc3a0, #ffafbd);}
+     }
+      
+
+
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 500px;
+}
+
+header {
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.2em;
+    color: #777;
+}
+
+
+nav {
+    background: #333;
+    color: white;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background: #444;
+    border-radius: 5px;
+}
+
+
+#about {
+    margin-bottom: 20px;
+}
+
+#about h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+
+.input-area, .quiz-area {
+    margin-bottom: 20px;
+}
+
+input, button {
+    width: calc(50% - 10px);
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+button {
+    background-color: #76c7c0;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #46c9c2;
+}
+
+
+.quiz-area .question {
+    margin-bottom: 10px;
+}
+
+.quiz-area input {
+    width: 100%;
+}
+
+
+.meter {
+    background-color: #ddd;
+    border-radius: 25px;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.meter > div {
+    height: 30px;
+    width: 0%;
+    background-color: #76c7c0;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    border-radius: 25px;
+    transition: width 1s ease-in-out; 
+}
+
+
+.result {
+    font-size: 1.2em;
+    color: #14bdaf;
+    margin-top: 20px;
+    text-transform: uppercase;
+}
+
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+    }
+
+    input, button {
+        width: 100%;
+        margin: 5px 0;
+    }
+}

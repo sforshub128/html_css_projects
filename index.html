@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friendship Meter Bar</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Friendship Meter &#x1F601;&#x1F49B;</h1>
+            <p>Test the strength of your friendship!</p>
+        </header>
+       
+        <section id="home">
+            <div class="input-area">
+                <input type="text" id="yourName" placeholder="Your Name">
+                <input type="text" id="friendName" placeholder="Friend's Name">
+                <button onclick="startQuiz()">Start Quiz</button>
+            </div>
+            <div class="quiz-area" id="quiz-area" style="display:none;">
+                <p>Answer these questions about your friend:</p> <br>
+                <div class="question">
+                    <p>1. What is your friend's favorite color?</p>
+                    <input type="text" id="q1">
+                </div>
+                <div class="question">
+                    <p>2. What is your friend's favorite food?   &#x1F957;</p>
+                    <input type="text" id="q2">
+                </div>
+                <div class="question">
+                    <p>3. What is your friend's favorite hobby?</p>
+                    <input type="text" id="q3">
+                </div>
+                <div class="question">
+                    <p>4. What is your friend's dream vacation destination?&#x1F30D;</p>
+                    <input type="text" id="q4">
+                </div>
+                <button onclick="calculateFriendship()" >Calculate Friendship</button>
+            </div>
+            <div class="meter">
+                <div id="meter-bar">0%</div>
+            </div>
+            <div class="result" id="result"></div>
+        </section>
+        <section id="about">
+            <h2>About</h2>
+            <p>This game helps you measure the strength of your friendship by answering a few fun questions. Enter your names, answer the questions, and see how well you know each other!</p>
+        </section>
+    </div>
+
+    <script>
+
+        function startQuiz() {
+            const yourName = document.getElementById('yourName').value;
+            const friendName = document.getElementById('friendName').value;
+          
+            if (yourName && friendName) {
+                document.querySelector('.input-area').style.display = 'none';
+                document.getElementById('quiz-area').style.display = 'block';
+            
+
+            } else {
+                alert('Please enter both names!');
+            }
+        }
+
+        function calculateFriendship() {
+           
+            const friendshipScore = Math.floor(Math.random() * 101); 
+            
+           
+            const meterBar = document.getElementById('meter-bar');
+            meterBar.style.width = '0%';
+            meterBar.innerText = '0%';
+
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= friendshipScore) {
+                    clearInterval(interval);
+                } else {
+                    width++;
+                    meterBar.style.width = width + '%';
+                    meterBar.innerText = width + '%';
+                    
+                }
+            }, 10);
+
+            const yourName = document.getElementById('yourName').value;
+            const friendName = document.getElementById('friendName').value;
+         
+                document.getElementById('result').innerText = `${yourName} and ${friendName} have a friendship score of ${friendshipScore}%!  `;
+
+           
+          
+        }
+    </script>
+</body>
+</html>
